@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferri Mundi S.A. - Trabajos, Herramientas y Maquinaria</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            light: '#4fd1c5', // teal-400 (Turquesa claro)
+                            DEFAULT: '#0d9488', // teal-600 (Turquesa principal)
+                            dark: '#0f766e', // teal-700 (Turquesa oscuro)
+                        },
+                        darkness: {
+                            DEFAULT: '#1e3a8a', // blue-900 (Azul marino)
+                            card: '#1e40af', // blue-800
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Estilos base para animaciones y scroll */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f4f6; }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        /* Ocultar scrollbar en el catálogo para un look más limpio */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Navegación -->
+    <nav class="bg-darkness text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3 group cursor-pointer">
+                    <img src="WhatsApp Image 2026-06-23 at 10.11.38 PM.jpeg" alt="Logo Ferri Mundi S.A." class="h-16 w-auto rounded-xl bg-white p-1 object-contain border border-brand shadow-[0_0_10px_rgba(13,148,136,0.5)] transition-transform duration-300 group-hover:scale-110">
+                    <span class="font-bold text-xl tracking-tight hidden sm:block">FERRI MUNDI <span class="text-brand">S.A.</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#" class="text-brand font-semibold hover:text-brand-light px-3 py-2 transition-colors">Inicio</a>
+                        <a href="#catalogo" class="text-gray-300 hover:text-white px-3 py-2 transition-colors">Catálogo</a>
+                        <a href="#contacto" class="text-gray-300 hover:text-white px-3 py-2 transition-colors">Contacto</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-darkness overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1541888081604-585a06019a16?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 lg:py-32">
+            <div class="flex flex-col-reverse md:flex-row items-center md:items-center gap-12">
+                <div class="text-center md:text-left md:w-3/5">
+                    <span class="text-brand font-bold tracking-wider uppercase text-sm mb-4 block">Soluciones Industriales Integrales</span>
+                    <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                        <span class="block">Equipamiento y Servicios</span>
+                        <span class="block text-brand">para tu Obra</span>
+                    </h1>
+                    <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        Explora nuestro catálogo completo. Ofrecemos mano de obra calificada, herramientas de precisión y maquinaria pesada para asegurar el éxito de tu proyecto de construcción.
+                    </p>
+                    <div class="mt-8 sm:flex sm:justify-center md:justify-start">
+                        <div class="rounded-md shadow">
+                            <a href="#catalogo" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand hover:bg-brand-light transition-colors md:py-4 md:text-lg shadow-[0_0_15px_rgba(13,148,136,0.4)]">
+                                Ver Catálogo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Logo Destacado en el Hero -->
+                <div class="md:w-2/5 flex justify-center animate-[float_6s_ease-in-out_infinite]">
+                    <div class="bg-white p-3 rounded-[2rem] shadow-[0_0_40px_rgba(13,148,136,0.5)] border-4 border-brand transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <img src="WhatsApp Image 2026-06-23 at 10.11.38 PM.jpeg" alt="Logo Ferri Mundi S.A. Gran Formato" class="w-56 h-56 md:w-72 md:h-72 object-contain rounded-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Principal del Catálogo -->
+    <main id="catalogo" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+        
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Nuestro Catálogo</h2>
+            <div class="w-24 h-1 bg-brand mx-auto mt-4 rounded"></div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button onclick="filtrarCatalogo('todos')" id="btn-todos" class="filter-btn active bg-darkness text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors shadow-md">
+                <i class="fa-solid fa-border-all mr-2"></i> Todos
+            </button>
+            <button onclick="filtrarCatalogo('trabajos')" id="btn-trabajos" class="filter-btn bg-white text-gray-700 border border-gray-200 px-6 py-2 rounded-full font-medium hover:bg-gray-50 transition-colors shadow-sm">
+                <i class="fa-solid fa-person-digging mr-2"></i> Trabajos / Servicios
+            </button>
+            <button onclick="filtrarCatalogo('herramientas')" id="btn-herramientas" class="filter-btn bg-white text-gray-700 border border-gray-200 px-6 py-2 rounded-full font-medium hover:bg-gray-50 transition-colors shadow-sm">
+                <i class="fa-solid fa-hammer mr-2"></i> Herramientas
+            </button>
+            <button onclick="filtrarCatalogo('maquinaria')" id="btn-maquinaria" class="filter-btn bg-white text-gray-700 border border-gray-200 px-6 py-2 rounded-full font-medium hover:bg-gray-50 transition-colors shadow-sm">
+                <i class="fa-solid fa-truck-tractor mr-2"></i> Maquinaria Pesada
+            </button>
+        </div>
+
+        <!-- Grid de Items -->
+        <div id="grid-catalogo" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Los items se generarán aquí con JavaScript -->
+        </div>
+
+    </main>
+
+    <!-- Modal de Detalles -->
+    <div id="modal-detalle" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Fondo oscuro -->
+        <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" onclick="cerrarModal()"></div>
+
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
+                    
+                    <!-- Botón Cerrar -->
+                    <button onclick="cerrarModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10 bg-white rounded-full p-1 shadow-sm">
+                        <i class="fa-solid fa-xmark text-xl w-8 h-8 flex items-center justify-center"></i>
+                    </button>
+
+                    <div id="modal-content" class="bg-white">
+                        <!-- El contenido del modal se inyecta por JS -->
+                    </div>
+                    
+                    <div class="bg-gray-50 px-4 py-4 sm:flex sm:flex-row-reverse sm:px-6 border-t border-gray-200">
+                        <button type="button" onclick="mostrarMensajeContacto()" class="inline-flex w-full justify-center rounded-md border border-transparent bg-brand px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-brand-dark focus:outline-none sm:ml-3 sm:w-auto sm:text-sm transition-colors">
+                            <i class="fa-solid fa-paper-plane mr-2 mt-1"></i> Solicitar Cotización
+                        </button>
+                        <button type="button" onclick="cerrarModal()" class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-6 py-3 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none sm:mt-0 sm:w-auto sm:text-sm transition-colors">
+                            Volver al Catálogo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-darkness text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center gap-3 mb-4 group">
+                    <img src="WhatsApp Image 2026-06-23 at 10.11.38 PM.jpeg" alt="Logo Ferri Mundi S.A." class="h-16 w-auto rounded-xl bg-white p-1 object-contain border-2 border-gray-600 transition-colors group-hover:border-brand">
+                    <span class="font-bold text-xl text-white tracking-tight">FERRI MUNDI S.A.</span>
+                </div>
+                <p class="text-sm">Tu aliado estratégico en el mundo de la construcción. Calidad, resistencia y profesionalismo en cada obra.</p>
+            </div>
+            <div>
+                <h3 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Contacto</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><i class="fa-solid fa-location-dot w-5 text-brand"></i> Guayaquil, Guayas, Ecuador</li>
+                    <li><i class="fa-solid fa-phone w-5 text-brand"></i> +593 99 999 9999</li>
+                    <li><i class="fa-solid fa-envelope w-5 text-brand"></i> ventas@ferrimundi.com.ec</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-semibold mb-4 uppercase tracking-wider text-sm">Horario de Atención</h3>
+                <ul class="space-y-2 text-sm">
+                    <li>Lunes a Viernes: 08:00 - 18:00</li>
+                    <li>Sábados: 09:00 - 14:00</li>
+                    <li>Domingos: Cerrado</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-blue-800 text-sm text-center">
+            <p>&copy; 2026 Ferri Mundi S.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Notificación flotante (toast) -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-green-600 text-white px-6 py-3 rounded-lg shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 z-[200]">
+        <i class="fa-solid fa-circle-check mr-2"></i> <span id="toast-msg">Mensaje enviado.</span>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Base de datos simulada del catálogo
+        const baseDeDatos = [
+            // TRABAJOS / SERVICIOS
+            {
+                id: 1,
+                categoria: 'trabajos',
+                titulo: 'Cimentación y Estructuras',
+                descripcionCorta: 'Construcción de bases sólidas y estructuras de hormigón armado.',
+                descripcionLarga: 'Ofrecemos servicios completos de cimentación, zapatas, losas y columnas. Nuestro equipo de ingenieros y albañiles garantiza estructuras seguras que cumplen con todas las normativas sismorresistentes.',
+                icono: 'fa-layer-group',
+                etiqueta: 'Servicio',
+                precio: 'Cotizar por m²'
+            },
+            {
+                id: 2,
+                categoria: 'trabajos',
+                titulo: 'Instalaciones Eléctricas',
+                descripcionCorta: 'Cableado estructurado, tableros y acometidas para obras.',
+                descripcionLarga: 'Realizamos cableado industrial y residencial, instalación de tableros de control, sistemas de puesta a tierra e iluminación especializada para grandes superficies.',
+                icono: 'fa-bolt',
+                etiqueta: 'Servicio',
+                precio: 'Desde $50/hora'
+            },
+            {
+                id: 3,
+                categoria: 'trabajos',
+                titulo: 'Plomería y Tuberías Industriales',
+                descripcionCorta: 'Redes de agua potable, desagües y sistemas contra incendios.',
+                descripcionLarga: 'Instalación de tuberías de alta presión, sistemas de bombeo, redes hidrosanitarias completas y mantenimiento de redes industriales.',
+                icono: 'fa-faucet-drip',
+                etiqueta: 'Servicio',
+                precio: 'Previa inspección'
+            },
+            {
+                id: 4,
+                categoria: 'trabajos',
+                titulo: 'Acabados y Revestimientos',
+                descripcionCorta: 'Pintura profesional, estucado, cerámica y porcelanato.',
+                descripcionLarga: 'Damos el toque final a tu obra. Colocación de pisos de alto tráfico, pintura exterior con tratamiento impermeabilizante y acabados arquitectónicos de primera línea.',
+                icono: 'fa-paint-roller',
+                etiqueta: 'Servicio',
+                precio: 'Cotizar por m²'
+            },
+
+            // HERRAMIENTAS
+            {
+                id: 5,
+                categoria: 'herramientas',
+                titulo: 'Taladro Percutor Industrial 20V',
+                descripcionCorta: 'Motor Brushless, 2 baterías de litio, mandril metálico.',
+                descripcionLarga: 'Herramienta inalámbrica de alto rendimiento ideal para perforar hormigón denso, madera y metal. Incluye estuche de transporte, cargador rápido y empuñadura auxiliar para mayor control.',
+                icono: 'fa-screwdriver',
+                etiqueta: 'Venta / Alquiler',
+                precio: '$245.00'
+            },
+            {
+                id: 6,
+                categoria: 'herramientas',
+                titulo: 'Amoladora Angular 9"',
+                descripcionCorta: 'Potencia de 2200W, guarda protectora de ajuste rápido.',
+                descripcionLarga: 'Diseñada para trabajos pesados de corte y desbaste en metal y mampostería. Cuenta con sistema anti-vibración en el mango y protección contra sobrecarga.',
+                icono: 'fa-gear',
+                etiqueta: 'Venta',
+                precio: '$180.00'
+            },
+            {
+                id: 7,
+                categoria: 'herramientas',
+                titulo: 'Nivel Láser 360° 3D',
+                descripcionCorta: 'Láser verde de alta visibilidad, autonivelante.',
+                descripcionLarga: 'Herramienta de precisión indispensable para nivelación de pisos, cielos rasos y muros. Proyecta 3 líneas de 360 grados. Resistencia IP54 al polvo y agua.',
+                icono: 'fa-ruler-combined',
+                etiqueta: 'Venta / Alquiler',
+                precio: '$320.00'
+            },
+            {
+                id: 8,
+                categoria: 'herramientas',
+                titulo: 'Martillo Demoledor 15kg',
+                descripcionCorta: 'Fuerza de impacto de 45 Joules, encastre hexagonal.',
+                descripcionLarga: 'Equipo robusto para romper pavimentos, demoler muros de concreto y cimientos. Sistema de reducción de vibración que permite jornadas largas de trabajo.',
+                icono: 'fa-hammer',
+                etiqueta: 'Alquiler',
+                precio: '$45.00 / día'
+            },
+
+            // MAQUINARIA
+            {
+                id: 9,
+                categoria: 'maquinaria',
+                titulo: 'Excavadora de Orugas 20T',
+                descripcionCorta: 'Brazo estándar, cucharón de 1.2 m³, cabina climatizada.',
+                descripcionLarga: 'Maquinaria pesada para movimientos de tierra a gran escala, excavación de zanjas profundas y carga de material. Operador certificado incluido en el servicio de alquiler.',
+                icono: 'fa-truck-pickup', // Usando pickup como aproximación para maquinaria pesada
+                etiqueta: 'Alquiler con Operador',
+                precio: '$85.00 / hora'
+            },
+            {
+                id: 10,
+                categoria: 'maquinaria',
+                titulo: 'Retroexcavadora Mixta',
+                descripcionCorta: 'Tracción 4x4, motor diésel turbo, versatilidad total.',
+                descripcionLarga: 'El equipo más versátil para la obra. Ideal para carga de camiones, excavación de cimientos, zanjas para tuberías y limpieza de terrenos.',
+                icono: 'fa-tractor',
+                etiqueta: 'Alquiler con Operador',
+                precio: '$45.00 / hora'
+            },
+            {
+                id: 11,
+                categoria: 'maquinaria',
+                titulo: 'Hormigonera Móvil (Trompo)',
+                descripcionCorta: 'Capacidad de 400 litros, motor a gasolina 9HP.',
+                descripcionLarga: 'Mezcladora de cemento portátil, ideal para obras medianas y pequeñas donde no hay acceso para camiones mixer. Chasis reforzado y llantas neumáticas.',
+                icono: 'fa-truck-monster',
+                etiqueta: 'Alquiler',
+                precio: '$30.00 / día'
+            },
+            {
+                id: 12,
+                categoria: 'maquinaria',
+                titulo: 'Compactadora de Suelo (Sapo)',
+                descripcionCorta: 'Fuerza de impacto 14kN, motor 4 tiempos.',
+                descripcionLarga: 'Apisonador tipo canguro perfecto para compactar zanjas, cimientos y áreas confinadas. Excelente equilibrio y fácil manejo.',
+                icono: 'fa-road',
+                etiqueta: 'Alquiler',
+                precio: '$25.00 / día'
+            }
+        ];
+
+        // Función para renderizar el catálogo
+        function renderizarCatalogo(filtro = 'todos') {
+            const grid = document.getElementById('grid-catalogo');
+            grid.innerHTML = ''; // Limpiar grid
+
+            const itemsFiltrados = filtro === 'todos' 
+                ? baseDeDatos 
+                : baseDeDatos.filter(item => item.categoria === filtro);
+
+            itemsFiltrados.forEach((item, index) => {
+                // Asignar color de fondo del banner según categoría
+                let bgClass = 'bg-gray-800';
+                let textCat = '';
+                if(item.categoria === 'trabajos') { bgClass = 'bg-blue-900'; textCat = 'Servicio'; }
+                if(item.categoria === 'herramientas') { bgClass = 'bg-orange-600'; textCat = 'Herramienta'; }
+                if(item.categoria === 'maquinaria') { bgClass = 'bg-yellow-600'; textCat = 'Maquinaria'; }
+
+                const delay = index * 0.05; // Efecto cascada
+
+                const cardHTML = `
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 fade-in flex flex-col h-full border border-gray-100" style="animation-delay: ${delay}s">
+                        <!-- Imagen/Icono cabecera -->
+                        <div class="${bgClass} h-40 flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-black opacity-20 group-hover:opacity-10 transition-opacity"></div>
+                            <i class="fa-solid ${item.icono} text-white text-6xl transform group-hover:scale-110 transition-transform duration-300 z-10"></i>
+                            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-800 shadow-sm z-10">
+                                ${textCat}
+                            </div>
+                        </div>
+                        
+                        <!-- Contenido -->
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-gray-900 leading-tight">${item.titulo}</h3>
+                            </div>
+                            <p class="text-gray-500 text-sm mb-4 flex-grow">${item.descripcionCorta}</p>
+                            
+                            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                                <span class="font-bold text-darkness bg-gray-100 px-3 py-1 rounded-md text-sm">${item.precio}</span>
+                                <button onclick="abrirModal(${item.id})" class="text-brand-dark hover:text-brand font-semibold text-sm flex items-center transition-colors">
+                                    Ver detalles <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += cardHTML;
+            });
+        }
+
+        // Función para cambiar los estilos de los botones de filtro
+        function filtrarCatalogo(categoria) {
+            // Actualizar botones
+            const botones = document.querySelectorAll('.filter-btn');
+            botones.forEach(btn => {
+                // Reset a estado inactivo
+                btn.className = 'filter-btn bg-white text-gray-700 border border-gray-200 px-6 py-2 rounded-full font-medium hover:bg-gray-50 transition-colors shadow-sm';
+            });
+
+            // Activar botón seleccionado
+            const btnActivo = document.getElementById(`btn-${categoria}`);
+            btnActivo.className = 'filter-btn active bg-darkness text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors shadow-md border border-darkness';
+
+            // Renderizar items
+            renderizarCatalogo(categoria);
+        }
+
+        // Modal Logic
+        const modal = document.getElementById('modal-detalle');
+        const modalContent = document.getElementById('modal-content');
+
+        function abrirModal(id) {
+            const item = baseDeDatos.find(i => i.id === id);
+            if (!item) return;
+
+            let iconColor = 'text-gray-800';
+            if(item.categoria === 'trabajos') iconColor = 'text-blue-600';
+            if(item.categoria === 'herramientas') iconColor = 'text-orange-500';
+            if(item.categoria === 'maquinaria') iconColor = 'text-yellow-500';
+
+            modalContent.innerHTML = `
+                <div class="bg-gray-50 px-6 py-8 border-b border-gray-200 sm:flex sm:items-center sm:gap-6">
+                    <div class="flex-shrink-0 bg-white p-4 rounded-full shadow-md mb-4 sm:mb-0 mx-auto sm:mx-0 w-24 h-24 flex items-center justify-center">
+                        <i class="fa-solid ${item.icono} text-5xl ${iconColor}"></i>
+                    </div>
+                    <div class="text-center sm:text-left">
+                        <span class="inline-block px-2 py-1 bg-gray-200 text-gray-700 text-xs font-bold rounded mb-2 uppercase tracking-wide">${item.etiqueta}</span>
+                        <h3 class="text-2xl font-extrabold text-gray-900" id="modal-title">${item.titulo}</h3>
+                        <p class="text-xl font-bold text-brand-dark mt-1">${item.precio}</p>
+                    </div>
+                </div>
+                <div class="px-6 py-6">
+                    <h4 class="text-lg font-bold text-gray-900 mb-3 border-b pb-2">Descripción Detallada</h4>
+                    <p class="text-gray-600 leading-relaxed">${item.descripcionLarga}</p>
+                    
+                    <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-start gap-3">
+                        <i class="fa-solid fa-circle-info text-yellow-600 mt-1"></i>
+                        <p class="text-sm text-yellow-800">Para solicitar este producto o servicio, haz clic en "Solicitar Cotización" e indica los requerimientos específicos de tu obra.</p>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+        }
+
+        function cerrarModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restaurar scroll
+        }
+
+        function mostrarMensajeContacto() {
+            cerrarModal();
+            const toast = document.getElementById('toast');
+            toast.innerHTML = '<i class="fa-solid fa-circle-check mr-2"></i> Te redirigiremos a WhatsApp para la cotización...';
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+
+        // Inicializar catálogo al cargar la página
+        window.onload = () => {
+            renderizarCatalogo('todos');
+        };
+
+        // Cerrar modal con tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                cerrarModal();
+            }
+        });
+    </script>
+</body>
+</html>
